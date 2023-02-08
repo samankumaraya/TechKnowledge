@@ -56,6 +56,9 @@ h1{
     font-size: 20px;
     cursor: pointer;
 }
+input::placeholder{
+    font-size:17px;
+}
 footer{
     margin-left: 20%;
 }
