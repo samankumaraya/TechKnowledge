@@ -1,3 +1,46 @@
+<?php 
+
+    require_once('connection.php');
+
+    if(isset($_POST['submit']))
+    {
+        $firstname = mysqli_real_escape_string($con,$_POST['firstname']);
+        $lastname = mysqli_real_escape_string($con,$_POST['lastname']);
+        $country = mysqli_real_escape_string($con,$_POST['country']);
+        $email = mysqli_real_escape_string($con,$_POST['email']);
+        $password = mysqli_real_escape_string($con,$_POST['password']);
+        $repassword = mysqli_real_escape_string($con,$_POST['repassword']);
+
+        if(empty($firstname) || empty($lastname) || empty($country)|| empty($email) || empty($password) || empty($repassword))
+        {
+            echo ' Please Fill in the Blanks ';
+        }
+        else
+        {
+            if($password!=$repassword)
+            {
+                echo ' Password Not Matched ';
+            }
+            else
+            {
+                $pass=md5($password);
+                $query = "insert into users (firstname,lastname,country,email,password) values ('$firstname','$lastname','$country','$email','$password')";
+                $result = mysqli_query($con,$query);
+
+                if($result)
+                {
+                    header('Location: emailverify.php');
+                }
+                else
+                {
+                    echo ' Please Check Your Query ';
+                }
+            }
+        }
+    }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,13 +128,13 @@ footer{
     <form action="register.php" method="post">
        
         <div>
-            <input type="text" name="username" id="username" placeholder="First Name" required><br><br>
+            <input type="text" name="firstname" id="username" placeholder="First Name" required><br><br>
         </div>
         <div>
-            <input type="text" name="username" id="username" placeholder="Last Name"><br><br>
+            <input type="text" name="lastname" id="username" placeholder="Last Name"><br><br>
         </div>
         <div>
-        <select required class="country">
+        <select required class="country" name="country">
         <option hidden>Select Country</option>
     <option value="Afghanistan">Afghanistan</option>
 <option value="Albania">Albania</option>
@@ -344,7 +387,7 @@ footer{
         </div>
         <br>
         <div>
-            <input type="password" name="password2" id="password2" placeholder="Re-type Password" required><br>
+            <input type="password" name="repassword" id="password" placeholder="Re-type Password" required><br>
         </div>
         <div>
             <label for="agree"><br>
@@ -353,7 +396,7 @@ footer{
                 <a href="#" title="term of services">term of services</a><br><br>
             </label>
         </div>
-        <button type="submit" class="btn">Register</button><br><br>
+        <button type="submit" name="submit" class="btn">Register</button><br><br>
         <footer>Already a member? <button class="btn2"><a href="login.php" class="logg">Login here</a></footer></button>
     </form>
     
