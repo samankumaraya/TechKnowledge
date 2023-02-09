@@ -4,44 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-   />
-   <link rel="stylesheet" href="style.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-   <style>
-   
-   body{
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="">
+    <style>
+        .img1{
+    width: 80%;
+    height: 100%;
+    margin-left:40%;
+}
+.container{
+    display: flex;
+    justify-content:;
+    padding: 0px;
+    margin: 0px;
+    background-color: aliceblue;
+    margin-left:9%;
+    height: 700px;
+    margin-top:2%;
+    width:80%;
+}
+body{
     background-color:azure;
-    background-image: url("regbackground.png");
+    background-image: url("");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.containers{
-justify-content: center;
-width:35%;
-height: 38%;
-background-color: aliceblue;
-justify-content: center;
-margin-top: 8%;
-margin-left: 31%;
-}
 input{
-    height:30px;
-    width: 63%;
-    margin-left: 20%;
+    height:40px;
+    width: 150%;
+    margin-left:10%;
 }
 .country{
-    margin-left:20%;
-    height: 35px;
-    width: 64%;
+    margin-left:10%;
+    height: 44px;
+    width: 152%;
 }
 h1{
+    margin-top:15%;
     display: flex;
     justify-content: center;
+    margin-left:12%;
+    font-size:40px;
+    
 }
 .agree{
     height: 20px;
@@ -49,9 +54,9 @@ h1{
     cursor: pointer;
 }
 .btn{
-    margin-left: 20%;
-    height: 35px;
-    width: 63%;
+    margin-left: 10%;
+    height: 40px;
+    width: 150%;
     background-color: rgb(190, 53, 190);
     font-size: 20px;
     cursor: pointer;
@@ -62,14 +67,7 @@ input::placeholder{
 footer{
     margin-left: 20%;
 }
-hr{
-    width: 100%;
-    color: rgb(190, 53, 190);
-    height: 10px;
-    background-color:rgb(190, 53, 190);
-    
-    font-size: 15px;
-}
+
 .logg{
     text-decoration: none;
     font-size: 25px;
@@ -77,14 +75,15 @@ hr{
 .btn2{
     cursor: pointer;
 }
-     
-   </style>
+    </style>
 </head>
 <body>
-    <div class="containers">
-    <hr>
+    <div class="container">
+   
+        <div class="loginpart">
+        <h1><b>Create Account</b></h1>
     <form action="register.php" method="post">
-        <h1><b>Create Account</b></h1> 
+       
         <div>
             <input type="text" name="username" id="username" placeholder="First Name" required><br><br>
         </div>
@@ -357,8 +356,13 @@ hr{
         <button type="submit" class="btn">Register</button><br><br>
         <footer>Already a member? <button class="btn2"><a href="login.php" class="logg">Login here</a></footer></button>
     </form>
-    <hr>
+    
+    
+        </div>
+        <div class="imagepart">
+        <img class="img1" src="signupanimation.png" alt="" srcset="">
+        </div>
     </div>
-
+    
 </body>
 </html>
