@@ -53,6 +53,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="">
+    <script src="jquery.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#txtUname").blur(function(){
+				var uname = $(this).val();
+				$.ajax({
+					method: 'POST',
+					url: 'CheckExists.php',
+					data: {txtUname: uname}
+				})
+				.done(function(data) {
+					$(".result-uname").html(data);
+				});
+			});	
+		});
+	</script>
     <style>
         .img1{
     width: 80%;
@@ -412,4 +428,7 @@ footer{
     </div>
     
 </body>
+<script type="text/javascript">
+
+</script>
 </html>
