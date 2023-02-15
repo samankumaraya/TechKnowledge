@@ -21,6 +21,9 @@
             {
                 echo ' Password Not Matched ';
             }
+            elseif(!isset($_POST['agree'])){
+                echo 'agree with terms put the tik';
+            }
             else
             {
                 $pass=md5($password);
@@ -29,6 +32,7 @@
 
                 if($result)
                 {
+
                     header('Location: emailverify.php');
                 }
                 else
