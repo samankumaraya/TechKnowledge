@@ -26,19 +26,35 @@
             }
             else
             {
-                $pass=md5($password);
-                $query = "insert into users (firstname,lastname,country,email,password) values ('$firstname','$lastname','$country','$email','$password')";
+       $verification_code = sha1($email . time());
+
+	   $verification_URL = 'http://localhost/TechKnowledge/emailverify.php?code=' . $verification_code;
+
+	   $query = "insert into users (firstname,lastname,country,email,password,verification_code,is_active) 
+	                values ('$firstname','$lastname','$country','$email','$password','$verification_code', false)";
                 $result = mysqli_query($con,$query);
+       
+	// mail sending code
+      if($result){
 
-                if($result)
-                {
-
-                    header('Location: emailverify.php');
-                }
-                else
-                {
-                    echo ' Please Check Your Query ';
-                }
+        $to	 		  = $email; // receiver
+        $sender		  = 'samankumaraya1@gmail.com'; // email address of the sender
+        $mail_subject = 'Verify Email Address';
+        $email_body   = '<p> Thank you for signing Up</p>';
+        $email_body   = '<p>' . $verification_URL . '</p>';
+    
+        $header       = "From: {$sender}\r\nContent-Type: text/html;";
+    
+        $send_mail_result = mail($to, $mail_subject, $email_body, $header);
+    
+        if ( $send_mail_result ) {
+            header('Location: emailverify.php');
+            echo 'Please check your email';
+        } else {
+            echo 'error';
+        }
+      }
+	
             }
         }
     }
@@ -53,22 +69,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="">
-    <script src="jquery.js"></script>
-	<script>
-		$(document).ready(function() {
-			$("#txtUname").blur(function(){
-				var uname = $(this).val();
-				$.ajax({
-					method: 'POST',
-					url: 'CheckExists.php',
-					data: {txtUname: uname}
-				})
-				.done(function(data) {
-					$(".result-uname").html(data);
-				});
-			});	
-		});
-	</script>
     <style>
         .img1{
     width: 80%;
@@ -397,8 +397,8 @@ footer{
 <option value="Zimbabwe">Zimbabwe</option>
 </select>
         </div><br>
+        <span id="check-username"></span>
         <div>
-          
             <input type="email" name="email" id="email" placeholder="Email Address" required><br><br>
         </div>
         
@@ -426,9 +426,7 @@ footer{
         <img class="img1" src="signupanimation.png" alt="" srcset="">
         </div>
     </div>
-    
-</body>
-<script type="text/javascript">
+   <script>
 
-</script>
+</body>
 </html>
