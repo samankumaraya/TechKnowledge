@@ -7,6 +7,9 @@
     <title>Home Page</title>
 </head>
 <body>
+    <?php
+      include 'header.php';
+    ?>
     <h1>hello</h1>
 </body>
 </html>

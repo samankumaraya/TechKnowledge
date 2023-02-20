@@ -13,7 +13,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-   
+   background color: white;
 }
 .img{
     margin-right: 170px;
