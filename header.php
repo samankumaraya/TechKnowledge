@@ -1,64 +1,65 @@
-<!DOCTYPE html>
+<!DOCTYPE htaml>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>header</title>
-    <link rel="stylesheet" href="stylle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        .container{
-    height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-   background color: white;
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tech Knowledge Academy</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: beige;
+  
+    margin: 0;
 }
-.img{
-    margin-right: 170px;
+header{
+    background-color: aquamarine;
 }
-
-a{
-    margin-top: 40px;
+a {
     text-decoration: none;
-    margin-right: 30px;
-    margin-left: 0px;
-    font-size:20px;
-    
+    color: #000;
 }
-.aboutuss{
-    margin-right: 50px;
+a:hover {
+    color: rgb(179, 179, 179);
 }
-.img1{
-    height:50px;
-    margin-bottom: 40px;
-    margin-right: 20px;
-    
+.site-header {
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-between;
 }
-.a1{
-    margin-top:20px;
+.site-identity h1 {
+    font-size: 1.5em;
+    margin: 0.6em 0;
+    display: inline-block;
 }
-#cupboa{
-    margin-right:75px;
+.site-navigation ul,
+.site-navigation li {
+    margin: 0;
+    padding: 0;
 }
-    </style>
-</head>
-<body>
-    <div class="container">
-        
-           <img src="logo.png"  class="img" alt="" srcset="">
-        
-           <a href="HomePage.php"><b>Home</b></a>
-           <a href="Login.php"><b>LogIn</b></a>
-           <a href="register.php"><b>Register</b></a>
-           <a href="aboutus.php" class="aboutuss"><b>About Us</b></a>
-           <a href="" class="a1"><img src="profile.png"  class="img1" alt="" srcset=""></a>
-           <a href="" class="a1"><img src="cupboard.png"  class="img1" id="cupboa" alt="" srcset=""></a>
-
-           
-
-       
-    </div>
-</body>
+.site-navigation li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+}
+        </style>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="site-identity">
+                <h1><a href="#">Tech Knowledge Academy</a></h1>
+            </div>
+            <nav class="site-navigation">
+                <ul class="nav">
+                    <li><a href="HomePage.php">Home</a></li>
+                    <li><a href="aboutus.php">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="register.php">Sign Up</a></li>
+                    <li><a href="Login.php">Log in</a></li>
+                </ul>
+            </nav>
+        </header>
+    </body>
 </html>
