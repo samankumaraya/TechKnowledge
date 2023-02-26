@@ -54,8 +54,8 @@ a:hover {
                 <ul class="nav">
                     <li><a href="HomePage.php">Home</a></li>
                     <li><a href="aboutus.php">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="https://www.blogger.com/blog/posts/7599516391469548502">Blog</a></li>
+                    <li><a href="contactus.php">Contact</a></li>
                     <li><a href="register.php">Sign Up</a></li>
                     <li><a href="Login.php">Log in</a></li>
                 </ul>
