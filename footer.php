@@ -23,7 +23,7 @@ body{
   
 }
 footer{
-  position: fixed;
+  
   background: black;
   bottom: 0;
   left: 0;
@@ -43,6 +43,7 @@ footer .content{
   max-width: 1250px;
   margin: auto;
   padding: 30px 40px 40px 40px;
+  margin-top: 35px;
 }
 footer .content .top{
   display: flex;
@@ -300,9 +301,12 @@ footer .bottom-details .bottom_text{
           <li><a href="#">Photoshop</a></li>
         </ul>
         <ul class="box input-box">
+          <form action="">
           <li class="link_name">Subscribe</li>
           <li><input type="text" placeholder="Enter your email"></li>
-          <li><input type="button" value="Subscribe"></li>
+          <li><input type="submit" value="Subscribe"></li>
+          </form>
+          
         </ul>
       </div>
     </div>

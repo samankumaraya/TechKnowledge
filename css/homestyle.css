@@ -1,0 +1,52 @@
+body{
+    background-color: white;
+}
+.gradeca{
+    margin-left: 20px;
+    border: 1px solid black;
+    width: 300px;
+    height: 400px;
+    margin-bottom: 500px;
+}
+.blogs{
+    display: flex;
+    margin-top: 2%;
+    margin-left: 4%;
+   
+    
+}
+img{
+    width: 96%;
+    height: 85%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 0%;
+    
+}
+.catagory{
+    margin-left: 0%;
+    border: 1px solid black;
+    width: 85%;
+    height: 110%;
+    
+}
+.totalcontent{
+    background-color: white;
+}
+h3{
+    margin-top:0% ;
+    padding-top: 0%;
+    margin-left: 40%;
+}
+.catagories{
+    display: flex;
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
+.cataheader{
+    margin-top: 200px;
+    color: red
+    ;
+}

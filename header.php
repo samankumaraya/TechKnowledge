@@ -9,7 +9,7 @@
             @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: beige;
+    
   
     margin: 0;
 }
@@ -24,7 +24,7 @@ a:hover {
     color: rgb(179, 179, 179);
 }
 .site-header {
-    border-bottom: 1px solid #ccc;
+    
     padding: 0.5em 1em;
     display: flex;
     justify-content: space-between;
